@@ -1,6 +1,25 @@
-import 'package:flutter/material.dart';
+import 'dart:async';
 
-class SplashScreen extends StatelessWidget {
+import 'package:flutter/material.dart';
+import 'package:test_app/screens/home_screen.dart';
+
+class SplashScreen extends StatefulWidget {
+
+  @override
+  _SplashScreenState createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+
+  void initState() {
+    super.initState();
+    Timer(Duration(seconds: 3), () {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => HomeScreen()),
+      );
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -8,10 +27,7 @@ class SplashScreen extends StatelessWidget {
       body: Container(
         color: Colors.lightBlueAccent,
         child: Center(
-          child: Icon(
-            Icons.home,
-            size: MediaQuery.of(context).size.width * 0.785,
-          ),
+          child: CircularProgressIndicator(),
         ),
       ),
     );
