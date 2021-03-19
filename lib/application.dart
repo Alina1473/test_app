@@ -7,8 +7,7 @@ class Application extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        buttonColor: Colors.pinkAccent,
-        accentColor: Colors.pinkAccent,
+        accentColor: Colors.cyan,
       ),
 
       home: SplashScreen(),
